@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $id = $_POST['id'];
         $res = Task::delete($id);
         echo $res;
+        # echo $_POST['id'];
     }
 }
 
@@ -27,14 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == "GET"){
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $task = Task::findById($id);
-        var_dump($task);
     }else{
         $tasks = Task::find();
-        var_dump($tasks);
+        # var_dump($tasks);
+        echo json_encode($tasks);
     }
     
 }
-
 
 
 ?>

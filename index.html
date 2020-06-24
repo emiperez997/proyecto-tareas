@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Proyecto Tareas </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="" class="navbar-brand mx-auto"> Tareas </a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div class="card">
+                    <div class="card-header text-center h4 bg-dark text-light">
+                        Tareas
+                    </div>
+                    
+                    <div class="card-body">
+                        <form onsubmit="addTask(title.value, desc.value); return false">
+                            <input type="hidden" id="id" class="id" value="">
+                            <input class="form-control mt-2 mb-2 title" type="text" placeholder="Titulo" name="title">
+                            <input class="form-control mt-2 mb-2 desc" type="text" placeholder="Descripcion" name="desc">
+                            <input class="form-control mt-2 mb-2 btn btn-primary" type="submit" value="Agregar">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th> Titulo </th>
+                            <th> Descripcion </th>
+                            <th> Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datos">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
