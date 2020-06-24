@@ -5,10 +5,6 @@ function conexion($dsn, $user = "root", $password = "") {
 
         $pdo = new PDO($dsn, $user, $password);
         // echo "Conectado!";
-    
-        // foreach($pdo->query("SELECT * FROM tasks") as $fila) {
-        //    print_r($fila);
-        // }
         
         return $pdo;
     
