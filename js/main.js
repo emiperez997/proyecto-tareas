@@ -1,5 +1,8 @@
 const deleteTask = (id) => {
     // console.log(id)
+    if(!confirm("¿Desea eliminar la tarea")){
+        return;
+    }
     const xmlhttp = new XMLHttpRequest()
 
     xmlhttp.onload = function (){
@@ -14,7 +17,10 @@ const deleteTask = (id) => {
 
 }
 
-const clearInputs = () => {
+const clearInputs = (e) => {
+    if(e){
+        e.preventDefault()
+    }
     document.querySelector(".id").value = ""
     document.querySelector(".title").value = ""
     document.querySelector(".desc").value = ""
@@ -70,10 +76,12 @@ const editTask = (id, title, desc) => {
     let inputId = document.querySelector('.id')
     let inputTitle =  document.querySelector('.title')
     let inputDesc = document.querySelector('.desc')
+    let inputAdd = document.querySelector('.add')
 
     inputId.value = id
     inputTitle.value = title
     inputDesc.value = desc
+    inputAdd.value = "Actualizar"
 
     console.log(id, title, desc)
 
